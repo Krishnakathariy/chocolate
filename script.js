@@ -1,12 +1,13 @@
-const messages = [
-  "You’re the sweetness in my life. ❤️",
-  "Every moment with you feels like a treat. 🍫",
-  "I can’t wait to share real chocolates with you soon! 🥰",
-  "You’re my favorite flavor in this world. 😘"
-];
-
-function revealMessage(index) {
-  const messageBox = document.getElementById('message-box');
-  messageBox.textContent = messages[index - 1];
-  messageBox.style.fontWeight = 'bold';
-}
+// Add smooth scrolling effect
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const sectionBottom = section.getBoundingClientRect().bottom;
+    if (sectionTop < window.innerHeight && sectionBottom > 0) {
+      section.style.opacity = 1;
+    } else {
+      section.style.opacity = 0;
+    }
+  });
+});
