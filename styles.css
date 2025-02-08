@@ -12,12 +12,15 @@ body, html {
 
 .container {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+    gap: 10px; /* Reduce gap for mobile */
+    justify-content: center;
+    padding: 10px; /* Add padding for better spacing */
 }
 
 .chocolate-box {
-    width: 150px;
-    height: 150px;
+    width: 100px; /* Smaller boxes for mobile */
+    height: 100px;
     overflow: hidden;
     border: 5px solid #8b4513; /* Chocolate brown border */
     border-radius: 15px;
@@ -51,10 +54,11 @@ body, html {
 .message {
     text-align: center;
     color: white;
+    padding: 20px; /* Add padding for better readability */
 }
 
 .typing-animation {
-    font-size: 2.5rem;
+    font-size: 1.5rem; /* Smaller font size for mobile */
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid white; /* Typing cursor effect */
@@ -69,4 +73,16 @@ body, html {
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: white; }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 600px) {
+    .chocolate-box {
+        width: 80px; /* Even smaller boxes for very small screens */
+        height: 80px;
+    }
+
+    .typing-animation {
+        font-size: 1.2rem; /* Smaller font size for very small screens */
+    }
 }
