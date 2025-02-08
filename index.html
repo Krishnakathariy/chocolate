@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chocolate Day Surprise</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Day Surprise</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="section" id="section1">
-    <h1>Happy Chocolate Day!</h1>
-    <p>You are as sweet as chocolate to me. 🍫❤</p>
-  </div>
-  <div class="section" id="section2">
-    <h1>Every Moment with You is Special</h1>
-    <p>Just like every bite of chocolate. 🍫😊</p>
-  </div>
-  <div class="section" id="section3">
-    <h1>You Make My Life Sweeter</h1>
-    <p>Here's a virtual chocolate box for you. 🍫🎁</p>
-  </div>
-  <div class="section" id="section4">
-    <h1>Forever Yours</h1>
-    <p>Let's celebrate our love with chocolates and more! 🍫💖</p>
-  </div>
+    <div class="container">
+        <div class="chocolate-box" id="box1">
+            <img src="chocolate1.jpg" alt="Chocolate 1">
+        </div>
+        <div class="chocolate-box" id="box2">
+            <img src="chocolate2.jpg" alt="Chocolate 2">
+        </div>
+        <div class="chocolate-box" id="box3">
+            <img src="chocolate3.jpg" alt="Chocolate 3">
+        </div>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- Full-screen overlay -->
+    <div class="overlay" id="overlay">
+        <div class="message" id="message">
+            <h1 class="typing-animation"></h1>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
