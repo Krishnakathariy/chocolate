@@ -8,18 +8,19 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Prevent scrolling during animation */
 }
 
 .container {
     display: flex;
-    flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
-    gap: 10px; /* Reduce gap for mobile */
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    padding: 10px; /* Add padding for better spacing */
+    padding: 10px;
 }
 
 .chocolate-box {
-    width: 100px; /* Smaller boxes for mobile */
+    width: 100px;
     height: 100px;
     overflow: hidden;
     border: 5px solid #8b4513; /* Chocolate brown border */
@@ -45,20 +46,49 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
     display: none;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.melted-chocolate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #8b4513; /* Chocolate brown color */
+    transform: scale(0); /* Start with no size */
+    border-radius: 50%; /* Start as a circle */
+    animation: melt 1.5s ease-out forwards; /* Melt animation */
+}
+
+@keyframes melt {
+    0% {
+        transform: scale(0);
+        border-radius: 50%;
+    }
+    50% {
+        transform: scale(1.5);
+        border-radius: 30%;
+    }
+    100% {
+        transform: scale(1);
+        border-radius: 0;
+    }
 }
 
 .message {
     text-align: center;
     color: white;
-    padding: 20px; /* Add padding for better readability */
+    z-index: 2; /* Ensure text appears above melted chocolate */
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-in 1.5s forwards; /* Fade in after melt */
 }
 
 .typing-animation {
-    font-size: 1.5rem; /* Smaller font size for mobile */
+    font-size: 2rem;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid white; /* Typing cursor effect */
@@ -75,14 +105,19 @@ body, html {
     50% { border-color: white; }
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Media Queries for Mobile */
 @media (max-width: 600px) {
     .chocolate-box {
-        width: 80px; /* Even smaller boxes for very small screens */
+        width: 80px;
         height: 80px;
     }
 
     .typing-animation {
-        font-size: 1.2rem; /* Smaller font size for very small screens */
+        font-size: 1.5rem;
     }
 }
